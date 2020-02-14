@@ -50,9 +50,15 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    Submit
-                </button>
+                <div class="mt-5">
+                    <a href="{{ route('products.index') }}" class="btn btn-danger">
+                        Cancel
+                    </a>
+
+                    <button type="submit" class="btn btn-success">
+                        Save
+                    </button>
+                </div>
             </form>
         </div>
     </div>

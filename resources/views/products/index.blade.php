@@ -20,7 +20,7 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($products as $product)
+                    @forelse ($products as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>
@@ -50,7 +50,15 @@
                                 </form>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <h4>
+                                    No products found.
+                                </h4>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
