@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('quantity');
+            $table->text('avatar');
             $table->timestamps();
         });
     }
