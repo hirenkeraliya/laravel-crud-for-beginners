@@ -90,4 +90,17 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    /**
+     * Removes the specified product
+     *
+     * @param \App\Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     **/
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        return redirect()->route('products.index');
+    }
 }

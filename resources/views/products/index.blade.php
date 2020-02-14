@@ -30,15 +30,24 @@
                             <td>{{ $product->model }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>
-                                <button class="btn btn-danger">
-                                    Delete
-                                </button>
-
                                 <a href="{{ route('products.edit', ['product' => $product->id]) }}"
                                     class="btn btn-warning"
                                 >
                                     Edit
                                 </a>
+
+                                <form action="{{ route('product.destroy', ['product' => $product->id]) }}"
+                                    method="POST"
+                                    class="d-inline pointer">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <a class="btn btn-danger"
+                                        onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }"
+                                    >
+                                        Delete
+                                    </a>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
