@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'UserController@index')->name('users.index');
-Route::get('/create', 'UserController@create')->name('users.create');
-Route::post('/create', 'UserController@store');
+Route::get('/', 'ProductController@index')->name('products.index');
+Route::get('/create', 'ProductController@create')->name('products.create');
+Route::post('/create', 'ProductController@store');

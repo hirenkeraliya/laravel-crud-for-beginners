@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <a class="btn btn-primary float-right mb-3 text-white" href="{{ route('users.create') }}">
+            <a class="btn btn-primary float-right mb-3 text-white" href="{{ route('products.create') }}">
                 Add New Product
             </a>
 
@@ -20,15 +20,15 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($products as $product)
                         <tr>
-                            <td>{{ $user->id }}</td>
+                            <td>{{ $product->id }}</td>
                             <td>
-                                <img src="{{ $user->avatar }}" alt="{{ $user->brand }}" width="80px">
+                                <img src="{{ $product->avatar }}" alt="{{ $product->brand }}" width="80px">
                             </td>
-                            <td>{{ $user->brand }}</td>
-                            <td>{{ $user->model }}</td>
-                            <td>{{ $user->quantity }}</td>
+                            <td>{{ $product->brand }}</td>
+                            <td>{{ $product->model }}</td>
+                            <td>{{ $product->quantity }}</td>
                             <td>
                                 <button class="btn btn-danger">
                                     Delete

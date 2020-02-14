@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Product;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
     /**
-     * Returns the list of the users
+     * Returns the list of the products
      *
      * @return \Illuminate\Http\Response
      **/
     public function index()
     {
-        $users = User::all();
+        $products = Product::all();
 
-        return view('users.index', compact('users'));
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -25,11 +25,11 @@ class UserController extends Controller
      **/
     public function create()
     {
-        return view('users.create');
+        return view('products.create');
     }
 
     /**
-     * Saves the user details
+     * Saves the product details
      *
      * @return \Illuminate\Http\RedirectResponse
      **/
@@ -43,8 +43,8 @@ class UserController extends Controller
         $path = request()->file('avatar')->store('/uploads', ['disk' => 'public']);
         $validatedData['avatar'] = '/storage//'.$path;
 
-        User::create($validatedData);
+        Product::create($validatedData);
 
-        return redirect()->route('users.index');
+        return redirect()->route('products.index');
     }
 }
