@@ -24,7 +24,7 @@
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>
-                                <img src="{{ $product->avatar }}" alt="{{ $product->brand }}" width="80px">
+                                <img src="/storage/{{ $product->avatar }}" alt="{{ $product->brand }}" width="80px">
                             </td>
                             <td>{{ $product->brand }}</td>
                             <td>{{ $product->model }}</td>
@@ -34,9 +34,11 @@
                                     Delete
                                 </button>
 
-                                <button class="btn btn-warning">
+                                <a href="{{ route('products.edit', ['product' => $product->id]) }}"
+                                    class="btn btn-warning"
+                                >
                                     Edit
-                                </button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
